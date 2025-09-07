@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}Plant Diagnosis - RootIntel{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">
+        <span class="page-icon">🔍</span>
+        Plant Diagnosis
+    </h1>
+    <p class="page-subtitle">Upload a photo for AI-powered diagnosis or describe symptoms for manual analysis</p>
+</div>
+
+<div class="diagnosis-container">
+    <div class="diagnosis-form-card">
+        <form id="diagnosisForm" class="diagnosis-form">
+            <!-- Image Upload -->
+            <div class="form-group">
+                <label class="form-label">
+                    <span class="label-icon">📷</span>
+                    Plant Photo
+                </label>
+                <div class="image-upload-area" id="imageUploadArea">
+                    <input type="file" id="imageInput" name="image" accept="image/*" capture="environment" hidden>
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <span class="upload-icon">📸</span>
+                        <p class="upload-text">Click to upload or drag & drop</p>
+                        <p class="upload-hint">PNG, JPG, WEBP, GIF up to 5MB</p>
+                        <p class="upload-tips">💡 Tip: You can also paste screenshots (Ctrl+V)</p>
+                    </div>
+                    <div class="image-preview" id="imagePreview" style="display: none;">
+                        <img id="previewImg" src="/placeholder.svg" alt="Plant preview">
+                        <button type="button" class="remove-image" id="removeImage" title="Remove image">×</button>
+                    </div>
+                </div>
+                <div class="upload-instructions">
+                    <p><strong>Upload Options:</strong></p>
+                    <ul>
+                        <li>📁 <strong>Desktop:</strong> Click to browse files from your computer</li>
+                        <li>📱 <strong>Mobile:</strong> Take a photo or select from gallery</li>
+                        <li>🖱️ <strong>Drag & Drop:</strong> Drag image files directly onto the upload area</li>
+                        <li>📋 <strong>Paste:</strong> Copy an image and press Ctrl+V (or Cmd+V on Mac)</li>
+                    </ul>
+                    <p class="ai-note">🤖 <strong>AI Analysis:</strong> Upload a clear photo of the affected plant part for the most accurate AI-powered diagnosis!</p>
+                </div>
+            </div>
+
+            <!-- Voice Input -->
+            <div class="form-group">
+                <label class="form-label">
+                    <span class="label-icon">🎤</span>
+                    Describe Symptoms
+                </label>
+                <div class="voice-input-container">
+                    <textarea 
+                        id="symptomsInput" 
+                        name="symptoms" 
+                        class="form-textarea" 
+                        placeholder="Describe what you observe: yellowing leaves, brown spots, wilting, etc."
+                        rows="4"
+                    ></textarea>
+                    <button type="button" id="voiceBtn" class="voice-btn" title="Voice input">
+                        <span class="voice-icon">🎤</span>
+                    </button>
+                </div>
+                <div class="voice-status" id="voiceStatus" style="display: none;">
+                    <span class="voice-indicator">🔴</span>
+                    <span class="voice-text">Listening...</span>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-icon">🔍</span>
+                <span class="btn-text">Analyze Plant</span>
+                <div class="btn-loader" style="display: none;">
+                    <div class="loader"></div>
+                </div>
+            </button>
+        </form>
+    </div>
+
+    <!-- Results -->
+    <div class="diagnosis-results" id="diagnosisResults" style="display: none;">
+        <div class="results-card">
+            <div class="results-header">
+                <h2 class="results-title">
+                    <span class="results-icon">🏥</span>
+                    Diagnosis Results
+                </h2>
+                <div class="confidence-badge" id="confidenceBadge">
+                    <span id="confidenceValue">0</span>% Confidence
+                </div>
+            </div>
+
+            <div class="ai-status" id="aiStatus" style="display: none;">
+                <span class="ai-icon">🤖</span>
+                <span class="ai-text">AI-Powered Analysis</span>
+            </div>
+
+            <div class="results-content">
+                <div class="diagnosis-info">
+                    <h3 class="diagnosis-name" id="diagnosisName"></h3>
+                    <p class="diagnosis-description" id="diagnosisDescription"></p>
+                </div>
+
+                <div class="treatment-section">
+                    <h4 class="section-title">
+                        <span class="section-icon">💊</span>
+                        Treatment Plan
+                    </h4>
+                    <ul class="treatment-list" id="treatmentList"></ul>
+                </div>
+
+                <div class="prevention-section">
+                    <h4 class="section-title">
+                        <span class="section-icon">🛡️</span>
+                        Prevention Tips
+                    </h4>
+                    <ul class="prevention-list" id="preventionList"></ul>
+                </div>
+
+                <div class="results-actions">
+                    <button class="action-btn secondary" id="saveBtn">
+                        <span class="btn-icon">💾</span>
+                        Save to Journal
+                    </button>
+                    <button class="action-btn primary" id="newDiagnosisBtn">
+                        <span class="btn-icon">🔍</span>
+                        New Diagnosis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message" id="errorMessage" style="display: none;">
+        <span class="error-icon">⚠️</span>
+        <span class="error-text"></span>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/diagnosis.js') }}"></script>
+{% endblock %}

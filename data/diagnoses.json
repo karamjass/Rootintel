@@ -1,0 +1,421 @@
+[
+  {
+    "id": "d92eadf0-08fb-4340-91c8-18cb5557b013",
+    "timestamp": "2025-06-29T11:38:41.105376",
+    "symptoms": "leaves are turing into brown spots",
+    "diagnosis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy"
+    },
+    "image_filename": "20250629_113841_download.jpg",
+    "has_image": true,
+    "ai_used": true
+  },
+  {
+    "id": "edf695cf-06a6-4335-bc7d-d0d2e8e5071c",
+    "timestamp": "2025-06-29T11:40:09.456895",
+    "symptoms": "red spots on between green leafs",
+    "diagnosis": {
+      "name": "Esca (Black Measles)",
+      "confidence": 80.0,
+      "diagnosis": "Fungal disease affecting grapevines",
+      "treatment": [
+        "Prune infected wood",
+        "Apply fungicide treatments",
+        "Improve air circulation",
+        "Control insect vectors"
+      ],
+      "prevention": [
+        "Plant disease-free stock",
+        "Proper pruning techniques",
+        "Monitor for symptoms",
+        "Control insect pests"
+      ],
+      "ai_predicted_class": "Esca_Black_Measles"
+    },
+    "image_filename": "20250629_114009_rose.jpg",
+    "has_image": true,
+    "ai_used": true
+  },
+  {
+    "id": "a43b7dd8-ecc2-4fdd-98ff-486adc06c7a2",
+    "timestamp": "2025-06-29T11:40:30.341277",
+    "symptoms": "red spots on between green leafs",
+    "diagnosis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy"
+    },
+    "image_filename": "20250629_114030_download.jpg",
+    "has_image": true,
+    "ai_used": true
+  },
+  {
+    "id": "5c9371db-5fea-4bd5-88eb-35312ab89248",
+    "timestamp": "2025-06-29T11:40:33.197501",
+    "symptoms": "red spots on between green leafs",
+    "diagnosis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy"
+    },
+    "image_filename": "20250629_114033_download.jpg",
+    "has_image": true,
+    "ai_used": true
+  },
+  {
+    "id": "9879287e-3c1e-4c47-a8a4-f8b4a47ce526",
+    "timestamp": "2025-06-29T11:49:49.060774",
+    "symptoms": "yellow leafs",
+    "diagnosis": {
+      "name": "Healthy Plant",
+      "confidence": 0.6,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy"
+    },
+    "image_filename": "20250629_114949_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based"
+  },
+  {
+    "id": "3106e290-fa4f-4d43-bb90-bc70a6f32def",
+    "timestamp": "2025-06-29T11:50:34.887150",
+    "symptoms": "yellow leafs with brown spots on centre and other sides too",
+    "diagnosis": {
+      "name": "Healthy Plant",
+      "confidence": 0.6,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy"
+    },
+    "image_filename": "20250629_115034_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based"
+  },
+  {
+    "id": "ebf3f9e8-6c6e-4df1-b45d-696adae1779d",
+    "timestamp": "2025-06-29T11:56:26.447107",
+    "symptoms": "",
+    "image_filename": "20250629_115626_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Healthy Plant",
+      "confidence": 0.6,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": null
+  },
+  {
+    "id": "a3db815c-bc86-4f8b-8a70-babde92c8c4f",
+    "timestamp": "2025-06-29T12:04:51.722782",
+    "symptoms": "yellowing leaves and brown spots",
+    "image_filename": null,
+    "has_image": false,
+    "ai_used": false,
+    "ai_method": null,
+    "image_analysis": null,
+    "symptom_analysis": {
+      "name": "Yellowing Leaves",
+      "confidence": 85,
+      "diagnosis": "Overwatering or nutrient deficiency",
+      "treatment": [
+        "Reduce watering frequency",
+        "Check soil drainage",
+        "Apply balanced fertilizer",
+        "Remove affected leaves"
+      ],
+      "prevention": [
+        "Water only when soil is dry",
+        "Ensure proper drainage",
+        "Regular fertilization schedule"
+      ],
+      "method": "symptom_based",
+      "success": true
+    }
+  },
+  {
+    "id": "495ad00e-9298-45e2-850f-ac1d28496751",
+    "timestamp": "2025-06-29T12:04:53.879415",
+    "symptoms": "combined test symptoms",
+    "image_filename": "20250629_120453_combined_test.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Healthy Plant",
+      "confidence": 90.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": {
+      "name": "General Plant Care",
+      "confidence": 60,
+      "diagnosis": "Unable to determine specific issue from symptoms",
+      "treatment": [
+        "Check watering schedule",
+        "Ensure adequate light",
+        "Inspect for pests",
+        "Consider repotting"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Proper care routine",
+        "Environmental control"
+      ],
+      "method": "symptom_based",
+      "success": true
+    }
+  },
+  {
+    "id": "1162fc53-53cf-4d81-a936-e1b5bc3664f6",
+    "timestamp": "2025-06-29T12:09:28.056409",
+    "symptoms": "",
+    "image_filename": "20250629_120927_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": null
+  },
+  {
+    "id": "3074238d-6a6a-4fe9-9c7e-9d4c8874aee9",
+    "timestamp": "2025-06-29T13:35:56.010796",
+    "symptoms": "",
+    "image_filename": "20250629_133555_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": null
+  },
+  {
+    "id": "c4306cc4-f22d-41a4-adbe-11bf310f115b",
+    "timestamp": "2025-06-29T13:36:15.497958",
+    "symptoms": "",
+    "image_filename": "20250629_133615_rose.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Esca (Black Measles)",
+      "confidence": 80.0,
+      "diagnosis": "Fungal disease affecting grapevines",
+      "treatment": [
+        "Prune infected wood",
+        "Apply fungicide treatments",
+        "Improve air circulation",
+        "Control insect vectors"
+      ],
+      "prevention": [
+        "Plant disease-free stock",
+        "Proper pruning techniques",
+        "Monitor for symptoms",
+        "Control insect pests"
+      ],
+      "ai_predicted_class": "Esca_Black_Measles",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": null
+  },
+  {
+    "id": "521a0f4c-a1ec-443e-93dd-d183cdfb329b",
+    "timestamp": "2025-06-29T13:37:58.702656",
+    "symptoms": "brown and its rotten",
+    "image_filename": "20250629_133758_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": {
+      "name": "Brown Spots",
+      "confidence": 78,
+      "diagnosis": "Fungal infection or leaf burn",
+      "treatment": [
+        "Remove affected leaves",
+        "Apply fungicide spray",
+        "Improve air circulation",
+        "Reduce humidity"
+      ],
+      "prevention": [
+        "Avoid overhead watering",
+        "Maintain proper spacing",
+        "Regular inspection"
+      ],
+      "method": "symptom_based",
+      "success": true
+    }
+  },
+  {
+    "id": "95f72819-3ff5-4b54-9d3e-72c5c805befd",
+    "timestamp": "2025-06-29T13:48:01.678653",
+    "symptoms": "",
+    "image_filename": "20250629_134801_download.jpg",
+    "has_image": true,
+    "ai_used": true,
+    "ai_method": "rule_based",
+    "image_analysis": {
+      "name": "Healthy Plant",
+      "confidence": 60.0,
+      "diagnosis": "Your plant appears to be healthy!",
+      "treatment": [
+        "Continue current care routine",
+        "Monitor for any changes",
+        "Maintain proper watering schedule",
+        "Ensure adequate sunlight"
+      ],
+      "prevention": [
+        "Regular monitoring",
+        "Consistent care routine",
+        "Proper environmental conditions"
+      ],
+      "ai_predicted_class": "Healthy",
+      "method": "rule_based",
+      "success": true
+    },
+    "symptom_analysis": null
+  }
+]

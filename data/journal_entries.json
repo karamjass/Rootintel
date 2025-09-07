@@ -1,0 +1,54 @@
+[
+  {
+    "id": "f4e8ccc7-9e42-4b42-9030-1e586acc64ee",
+    "timestamp": "2025-06-29T12:38:30.322702",
+    "title": "Effects of Light Intensity on Tropical Plant Growth",
+    "abstract": "This study investigates the relationship between photosynthetic active radiation and biomass production in tropical plant species under controlled conditions.",
+    "hypothesis": "Increased light intensity will lead to higher biomass production and improved photosynthetic efficiency in tropical plants.",
+    "methodology": "Three tropical plant specimens were exposed to varying light intensities (40%, 70%, 100%) for 30 days. Growth measurements were taken daily.",
+    "experimental_setup": "",
+    "results": "Plants exposed to 70% light intensity showed optimal growth with 25% increase in biomass compared to 40% light. 100% light caused photoinhibition.",
+    "conclusions": "Moderate light intensity (70%) provides optimal conditions for tropical plant growth, while excessive light can be detrimental.",
+    "data_analysis": "",
+    "references": "",
+    "tags": [
+      "photosynthesis",
+      "growth",
+      "light intensity",
+      "tropical plants",
+      "biomass"
+    ],
+    "plant_type": "tropical",
+    "environmental_conditions": {},
+    "measurements": {},
+    "observations": [],
+    "images": [],
+    "status": "published"
+  },
+  {
+    "id": "616ec0e6-8e5f-4587-b269-4f7b5b06d253",
+    "timestamp": "2025-06-29T13:35:38.351376",
+    "title": "Effects of Light Intensity on Tropical Plant Growth",
+    "abstract": "This study investigates the relationship between photosynthetic active radiation and biomass production in tropical plant species under controlled conditions.",
+    "hypothesis": "Increased light intensity will lead to higher biomass production and improved photosynthetic efficiency in tropical plants.",
+    "methodology": "Three tropical plant specimens were exposed to varying light intensities (40%, 70%, 100%) for 30 days. Growth measurements were taken daily.",
+    "experimental_setup": "",
+    "results": "Plants exposed to 70% light intensity showed optimal growth with 25% increase in biomass compared to 40% light. 100% light caused photoinhibition.",
+    "conclusions": "Moderate light intensity (70%) provides optimal conditions for tropical plant growth, while excessive light can be detrimental.",
+    "data_analysis": "",
+    "references": "",
+    "tags": [
+      "photosynthesis",
+      "growth",
+      "light intensity",
+      "tropical plants",
+      "biomass"
+    ],
+    "plant_type": "tropical",
+    "environmental_conditions": {},
+    "measurements": {},
+    "observations": [],
+    "images": [],
+    "status": "published"
+  }
+]

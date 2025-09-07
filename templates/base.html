@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RootIntel - AI Plant Care Assistant{% endblock %}</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#10b981">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="RootIntel">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon-192.png') }}">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">🌱</span>
+                <span class="nav-title">RootIntel</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="{{ url_for('diagnosis') }}" class="nav-link {% if request.endpoint == 'diagnosis' %}active{% endif %}">
+                    <span class="nav-icon">🔍</span>
+                    <span>Diagnosis</span>
+                </a>
+                <a href="{{ url_for('simulation') }}" class="nav-link {% if request.endpoint == 'simulation' %}active{% endif %}">
+                    <span class="nav-icon">🧪</span>
+                    <span>Simulation</span>
+                </a>
+                <a href="{{ url_for('quests') }}" class="nav-link {% if request.endpoint == 'quests' %}active{% endif %}">
+                    <span class="nav-icon">🎯</span>
+                    <span>Quests</span>
+                </a>
+                <a href="{{ url_for('journal') }}" class="nav-link {% if request.endpoint == 'journal' %}active{% endif %}">
+                    <span class="nav-icon">📔</span>
+                    <span>Journal</span>
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 RootIntel. Helping plants thrive with AI.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Offline Indicator -->
+    <div id="offlineIndicator" class="offline-indicator hidden">
+        <span class="offline-icon">📡</span>
+        <span class="offline-text">You're offline</span>
+    </div>
+
+    <!-- Install Prompt -->
+    <div id="installPrompt" class="install-prompt hidden">
+        <div class="install-content">
+            <span class="install-icon">📱</span>
+            <div class="install-text">
+                <h3>Install RootIntel</h3>
+                <p>Get the full app experience</p>
+            </div>
+            <button id="installBtn" class="install-btn">Install</button>
+            <button id="dismissBtn" class="dismiss-btn">×</button>
+        </div>
+    </div>
+
+    <!-- Base Scripts -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+    {% block scripts %}{% endblock %}
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/static/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
+</merged_code>

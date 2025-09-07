@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}RootIntel - AI Plant Care Assistant{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="hero-icon">🌱</span>
+            Welcome to RootIntel
+        </h1>
+        <p class="hero-subtitle">Your AI-powered plant care companion</p>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-number">{{ user_data.plants_saved }}</div>
+                <div class="stat-label">Plants Saved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ user_data.level }}</div>
+                <div class="stat-label">Level</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ user_data.xp }}</div>
+                <div class="stat-label">XP</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard-grid">
+    <!-- Quick Actions -->
+    <div class="dashboard-card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <span class="card-icon">⚡</span>
+                Quick Actions
+            </h2>
+        </div>
+        <div class="card-content">
+            <div class="action-grid">
+                <a href="/diagnosis" class="action-btn">
+                    <span class="action-icon">🔍</span>
+                    <span class="action-text">Diagnose Plant</span>
+                </a>
+                <a href="/simulation" class="action-btn">
+                    <span class="action-icon">🧪</span>
+                    <span class="action-text">Run Simulation</span>
+                </a>
+                <a href="/journal" class="action-btn">
+                    <span class="action-icon">📔</span>
+                    <span class="action-text">Add Entry</span>
+                </a>
+                <a href="/quests" class="action-btn">
+                    <span class="action-icon">🎯</span>
+                    <span class="action-text">View Quests</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="dashboard-card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <span class="card-icon">📊</span>
+                Your Progress
+            </h2>
+        </div>
+        <div class="card-content">
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Level {{ user_data.level }}</span>
+                    <span>{{ user_data.xp }}/{{ user_data.level * 100 }} XP</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ (user_data.xp / (user_data.level * 100)) * 100 }}%"></div>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-icon">🏥</span>
+                    <div class="stat-info">
+                        <div class="stat-value">{{ user_data.diagnoses_count }}</div>
+                        <div class="stat-name">Diagnoses</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📝</span>
+                    <div class="stat-info">
+                        <div class="stat-value">{{ user_data.journal_entries_count }}</div>
+                        <div class="stat-name">Journal Entries</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-info">
+                        <div class="stat-value">{{ user_data.quests_completed }}</div>
+                        <div class="stat-name">Quests Done</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Badges -->
+    {% if user_data.badges %}
+    <div class="dashboard-card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <span class="card-icon">🏆</span>
+                Your Badges
+            </h2>
+        </div>
+        <div class="card-content">
+            <div class="badges-grid">
+                {% for badge in user_data.badges %}
+                <div class="badge-item">{{ badge }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Recent Activity -->
+    {% if recent_activity %}
+    <div class="dashboard-card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <span class="card-icon">📈</span>
+                Recent Activity
+            </h2>
+        </div>
+        <div class="card-content">
+            <div class="activity-list">
+                {% for activity in recent_activity %}
+                <div class="activity-item">
+                    <div class="activity-icon {{ activity.status }}">
+                        {% if activity.type == 'diagnosis' %}🔍
+                        {% elif activity.type == 'journal' %}📔
+                        {% else %}✨{% endif %}
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">{{ activity.text }}</div>
+                        <div class="activity-time">{{ activity.timestamp[:10] }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Tips & Insights -->
+    <div class="dashboard-card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <span class="card-icon">💡</span>
+                Plant Care Tips
+            </h2>
+        </div>
+        <div class="card-content">
+            <div class="tips-list">
+                <div class="tip-item">
+                    <span class="tip-icon">💧</span>
+                    <div class="tip-text">
+                        <strong>Watering Tip:</strong> Check soil moisture before watering. Most plants prefer slightly dry soil between waterings.
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">☀️</span>
+                    <div class="tip-text">
+                        <strong>Light Tip:</strong> Rotate your plants weekly to ensure even growth and prevent leaning toward light sources.
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">🌡️</span>
+                    <div class="tip-text">
+                        <strong>Temperature Tip:</strong> Most houseplants thrive in temperatures between 65-75°F (18-24°C).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

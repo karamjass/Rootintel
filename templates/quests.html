@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+
+{% block title %}Learning Quests - RootIntel{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">
+        <span class="page-icon">🎯</span>
+        Learning Quests
+    </h1>
+    <p class="page-subtitle">Complete challenges to level up your plant care skills</p>
+</div>
+
+<div class="quests-container">
+    <!-- Progress Overview -->
+    <div class="progress-overview">
+        <div class="progress-card">
+            <div class="progress-header">
+                <h2 class="progress-title">Your Progress</h2>
+                <div class="level-badge">Level {{ user_data.level }}</div>
+            </div>
+            <div class="progress-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-info">
+                        <div class="stat-value">{{ user_data.quests_completed }}</div>
+                        <div class="stat-name">Quests Completed</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">⭐</span>
+                    <div class="stat-info">
+                        <div class="stat-value">{{ user_data.xp }}</div>
+                        <div class="stat-name">Experience Points</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🏆</span>
+                    <div class="stat-info">
+                        <div class="stat-value">{{ user_data.badges|length }}</div>
+                        <div class="stat-name">Badges Earned</div>
+                    </div>
+                </div>
+            </div>
+            <div class="xp-progress">
+                <div class="xp-label">
+                    <span>Level {{ user_data.level }}</span>
+                    <span>{{ user_data.xp }}/{{ user_data.level * 100 }} XP</span>
+                </div>
+                <div class="xp-bar">
+                    <div class="xp-fill" style="width: {{ (user_data.xp / (user_data.level * 100)) * 100 }}%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Available Quests -->
+    <div class="quests-grid">
+        <!-- Beginner Quests -->
+        <div class="quest-card beginner">
+            <div class="quest-header">
+                <div class="quest-icon">🔍</div>
+                <div class="quest-info">
+                    <h3 class="quest-title">First Diagnosis</h3>
+                    <div class="quest-difficulty">Beginner</div>
+                </div>
+                <div class="quest-reward">+25 XP</div>
+            </div>
+            <div class="quest-description">
+                Complete your first plant diagnosis using the AI diagnostic tool.
+            </div>
+            <div class="quest-objectives">
+                <div class="objective">
+                    <span class="objective-icon">📷</span>
+                    Upload a plant photo
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">📝</span>
+                    Describe symptoms
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">🏥</span>
+                    Get diagnosis results
+                </div>
+            </div>
+            <button class="quest-btn" data-quest="first-diagnosis">
+                <span class="btn-icon">🚀</span>
+                Start Quest
+            </button>
+        </div>
+
+        <div class="quest-card beginner">
+            <div class="quest-header">
+                <div class="quest-icon">☀️</div>
+                <div class="quest-info">
+                    <h3 class="quest-title">Sunlight Experiment</h3>
+                    <div class="quest-difficulty">Beginner</div>
+                </div>
+                <div class="quest-reward">+50 XP</div>
+            </div>
+            <div class="quest-description">
+                Use the simulation tool to experiment with different sunlight levels.
+            </div>
+            <div class="quest-objectives">
+                <div class="objective">
+                    <span class="objective-icon">🧪</span>
+                    Run 3 simulations
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">☀️</span>
+                    Test different light levels
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">📊</span>
+                    Compare results
+                </div>
+            </div>
+            <button class="quest-btn" data-quest="sunlight-experiment">
+                <span class="btn-icon">🚀</span>
+                Start Quest
+            </button>
+        </div>
+
+        <!-- Intermediate Quests -->
+        <div class="quest-card intermediate">
+            <div class="quest-header">
+                <div class="quest-icon">🌹</div>
+                <div class="quest-info">
+                    <h3 class="quest-title">Heal the Blight</h3>
+                    <div class="quest-difficulty">Intermediate</div>
+                </div>
+                <div class="quest-reward">+75 XP</div>
+            </div>
+            <div class="quest-description">
+                Successfully diagnose and treat a plant with leaf blight symptoms.
+            </div>
+            <div class="quest-objectives">
+                <div class="objective">
+                    <span class="objective-icon">🔍</span>
+                    Identify blight symptoms
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">💊</span>
+                    Apply treatment plan
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">📔</span>
+                    Document in journal
+                </div>
+            </div>
+            <button class="quest-btn" data-quest="heal-blight">
+                <span class="btn-icon">🚀</span>
+                Start Quest
+            </button>
+        </div>
+
+        <div class="quest-card intermediate">
+            <div class="quest-header">
+                <div class="quest-icon">🌻</div>
+                <div class="quest-info">
+                    <h3 class="quest-title">Perfect Sunflower</h3>
+                    <div class="quest-difficulty">Intermediate</div>
+                </div>
+                <div class="quest-reward">+100 XP</div>
+            </div>
+            <div class="quest-description">
+                Achieve 90%+ health in simulation with a sunflower plant.
+            </div>
+            <div class="quest-objectives">
+                <div class="objective">
+                    <span class="objective-icon">🌻</span>
+                    Select sunflower type
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">⚙️</span>
+                    Optimize conditions
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">📈</span>
+                    Achieve 90%+ health
+                </div>
+            </div>
+            <button class="quest-btn" data-quest="perfect-sunflower">
+                <span class="btn-icon">🚀</span>
+                Start Quest
+            </button>
+        </div>
+
+        <!-- Advanced Quests -->
+        <div class="quest-card advanced">
+            <div class="quest-header">
+                <div class="quest-icon">❄️</div>
+                <div class="quest-info">
+                    <h3 class="quest-title">Frost Recovery</h3>
+                    <div class="quest-difficulty">Advanced</div>
+                </div>
+                <div class="quest-reward">+150 XP</div>
+            </div>
+            <div class="quest-description">
+                Help a frost-damaged plant recover using advanced techniques.
+            </div>
+            <div class="quest-objectives">
+                <div class="objective">
+                    <span class="objective-icon">🧊</span>
+                    Assess frost damage
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">🌡️</span>
+                    Adjust temperature
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">💚</span>
+                    Monitor recovery
+                </div>
+            </div>
+            <button class="quest-btn" data-quest="frost-recovery">
+                <span class="btn-icon">🚀</span>
+                Start Quest
+            </button>
+        </div>
+
+        <div class="quest-card advanced">
+            <div class="quest-header">
+                <div class="quest-icon">🏆</div>
+                <div class="quest-info">
+                    <h3 class="quest-title">Master Gardener</h3>
+                    <div class="quest-difficulty">Expert</div>
+                </div>
+                <div class="quest-reward">+200 XP</div>
+            </div>
+            <div class="quest-description">
+                Complete 10 successful diagnoses and maintain a 90% success rate.
+            </div>
+            <div class="quest-objectives">
+                <div class="objective">
+                    <span class="objective-icon">🔟</span>
+                    10 diagnoses
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">📊</span>
+                    90% accuracy
+                </div>
+                <div class="objective">
+                    <span class="objective-icon">🏅</span>
+                    Earn master badge
+                </div>
+            </div>
+            <button class="quest-btn" data-quest="master-gardener">
+                <span class="btn-icon">🚀</span>
+                Start Quest
+            </button>
+        </div>
+    </div>
+
+    <!-- Badges Section -->
+    {% if user_data.badges %}
+    <div class="badges-section">
+        <h2 class="badges-title">
+            <span class="badges-icon">🏆</span>
+            Your Badges
+        </h2>
+        <div class="badges-grid">
+            {% for badge in user_data.badges %}
+            <div class="badge-item earned">
+                <span class="badge-emoji">{{ badge.split(' ')[0] }}</span>
+                <span class="badge-name">{{ badge.split(' ', 1)[1] if ' ' in badge else badge }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Success Modal -->
+<div id="questModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">🎉 Quest Completed!</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="quest-success">
+                <div class="success-icon">🏆</div>
+                <div class="success-text">
+                    <h4 id="completedQuestTitle">Quest Title</h4>
+                    <p id="completedQuestReward">+100 XP earned!</p>
+                </div>
+            </div>
+            <div class="level-up" id="levelUpNotification" style="display: none;">
+                <div class="level-up-icon">⭐</div>
+                <div class="level-up-text">Level Up! You're now level <span id="newLevel">2</span>!</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/quests.js') }}"></script>
+{% endblock %}

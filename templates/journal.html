@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block title %}Scientific Journal - RootIntel{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">
+        <span class="page-icon">📔</span>
+        Scientific Journal
+    </h1>
+    <p class="page-subtitle">Document your plant care experiments and observations</p>
+</div>
+
+<div class="journal-container">
+    <!-- Add Entry Form -->
+    <div class="journal-form-card">
+        <div class="form-header">
+            <h2 class="form-title">
+                <span class="form-icon">✍️</span>
+                New Journal Entry
+            </h2>
+            <button id="toggleForm" class="toggle-btn">
+                <span class="toggle-icon">➕</span>
+            </button>
+        </div>
+
+        <form id="journalForm" class="journal-form" style="display: none;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-icon">💡</span>
+                        Hypothesis
+                    </label>
+                    <textarea 
+                        id="hypothesis" 
+                        name="hypothesis" 
+                        class="form-textarea" 
+                        placeholder="What do you think will happen? Why?"
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-icon">🔬</span>
+                        Action Taken
+                    </label>
+                    <textarea 
+                        id="action" 
+                        name="action" 
+                        class="form-textarea" 
+                        placeholder="What did you do? Describe your experiment or treatment."
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-icon">📊</span>
+                        Results Observed
+                    </label>
+                    <textarea 
+                        id="result" 
+                        name="result" 
+                        class="form-textarea" 
+                        placeholder="What happened? Describe the outcomes."
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-icon">🤔</span>
+                        Reflection & Learning
+                    </label>
+                    <textarea 
+                        id="reflection" 
+                        name="reflection" 
+                        class="form-textarea" 
+                        placeholder="What did you learn? What would you do differently?"
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-icon">🏷️</span>
+                        Tags
+                    </label>
+                    <input 
+                        type="text" 
+                        id="tags" 
+                        name="tags" 
+                        class="form-input" 
+                        placeholder="watering, fertilizer, pruning (comma-separated)"
+                    >
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" id="cancelBtn" class="btn-secondary">
+                    <span class="btn-icon">❌</span>
+                    Cancel
+                </button>
+                <button type="submit" id="saveBtn" class="btn-primary">
+                    <span class="btn-icon">💾</span>
+                    <span class="btn-text">Save Entry</span>
+                    <div class="btn-loader" style="display: none;">
+                        <div class="loader"></div>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Journal Entries -->
+    <div class="journal-entries">
+        {% if entries %}
+            {% for entry in entries|reverse %}
+            <div class="journal-entry">
+                <div class="entry-header">
+                    <div class="entry-date">
+                        <span class="date-icon">📅</span>
+                        {{ entry.timestamp[:10] }}
+                    </div>
+                    <div class="entry-time">{{ entry.timestamp[11:16] }}</div>
+                </div>
+
+                <div class="entry-content">
+                    {% if entry.hypothesis %}
+                    <div class="entry-section">
+                        <h4 class="section-title">
+                            <span class="section-icon">💡</span>
+                            Hypothesis
+                        </h4>
+                        <p class="section-text">{{ entry.hypothesis }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if entry.action %}
+                    <div class="entry-section">
+                        <h4 class="section-title">
+                            <span class="section-icon">🔬</span>
+                            Action Taken
+                        </h4>
+                        <p class="section-text">{{ entry.action }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if entry.result %}
+                    <div class="entry-section">
+                        <h4 class="section-title">
+                            <span class="section-icon">📊</span>
+                            Results
+                        </h4>
+                        <p class="section-text">{{ entry.result }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if entry.reflection %}
+                    <div class="entry-section">
+                        <h4 class="section-title">
+                            <span class="section-icon">🤔</span>
+                            Reflection
+                        </h4>
+                        <p class="section-text">{{ entry.reflection }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if entry.tags %}
+                    <div class="entry-tags">
+                        {% for tag in entry.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">📔</div>
+            <h3 class="empty-title">No Journal Entries Yet</h3>
+            <p class="empty-text">Start documenting your plant care journey by adding your first entry!</p>
+            <button id="addFirstEntry" class="empty-btn">
+                <span class="btn-icon">✍️</span>
+                Add First Entry
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Success Message -->
+<div id="successMessage" class="success-message" style="display: none;">
+    <span class="success-icon">✅</span>
+    <span class="success-text">Journal entry saved successfully!</span>
+</div>
+
+<!-- Error Message -->
+<div id="errorMessage" class="error-message" style="display: none;">
+    <span class="error-icon">⚠️</span>
+    <span class="error-text">Failed to save entry. Please try again.</span>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/journal.js') }}"></script>
+{% endblock %}
